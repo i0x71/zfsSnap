@@ -33,13 +33,8 @@ then
     echo "[+] $snapshot|$snapshotAge"
     if (( $snapshotAge > $olderThan ))
     then
-      eval "echo $snapshot | grep $snapshotName > /dev/null"
-      status=$?
-      if test $status -eq 0
-      then
         echo "[+] Destroying $snapshot"
         $zfsPath destroy $snapshot
-      fi
     fi
   done < <($zfsPath list -t snapshot -H | awk '{ print $1 }' | grep $snapshotName)
 else
