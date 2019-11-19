@@ -1,35 +1,26 @@
 # zfsSnap
-#### Simple zfs cleanup snapshot script with no dependencies
-#### Script is used for snapshot cleanup, see examples.
+## ZFS Snapshot automatic create/destroy script ##
 
-root@host:~# /tank/scripts/zfsSnap.sh 
-/tank/scripts/zfsSnap.sh **[snapshotName] [olderThan]**
+root@swamp:/swamptank/scripts# ./zfsSnap.sh 
 
-**olderThan amount in seconds.**
-
-## !!!! Snapshot name must be in the following format ##
-
-**[zpoolPath]@[snapshotName]_[timestampInSecondsSinceEpoch] **
-
-**tank/media@syncthing_test_1574178998 **
-
-## Examples:
-root@host:~# zfs snapshot tank/media@**media_daily**_`date +%s`
-
-root@host:~# /tank/scripts/zfsSnap.sh **media_daily 86400**
-
-*86000 seconds is 24 hours*
-
-root@host:~# zfs snapshot swamptank/syncthing@**media_weekly**_`date +%s`
-
-root@host:~# /tank/scripts/zfsSnap.sh **media_weekly 604800**
-
-*604800 seconds is 7 days*
+./zfsSnap.sh [create|destroy] [snapshotName] [olderThan]
 
 
-## Cron examples:
-@daily /usr/local/sbin/zfs snapshot tank/media@**media_daily**_`date +%s`
-@daily /tank/scripts/zfsSnap.sh **media_daily 86400**
+## Examples ##
+root@host:~# ./zfsSnap.sh create swamptank/syncthing@minute
 
-@weekly /usr/local/sbin/zfs snapshot tank/Mmedia@**media_weekly**_`date +%s`
-@weekly /tank/scripts/zfsSnap.sh **media_weekly 604800**
+root@host:~# ./zfsSnap.sh destroy swamptank/syncthing@minute 60
+
+## Crontab examples ##
+@daily /swamptank/scripts/zfsSnap.sh create swamptank/syncthing@minute
+
+@daily /swamptank/scripts/zfsSnap.sh destroy swamptank/syncthing@minute 60
+
+@daily /swamptank/scripts/zfsSnap.sh create swamptank/syncthing@minute
+
+@daily /swamptank/scripts/zfsSnap.sh destroy swamptank/syncthing@minute 60
+
+@weekly /swamptank/scripts/zfsSnap.sh create swamptank/syncthing@minute
+
+@weekly /swamptank/scripts/zfsSnap.sh destroy swamptank/syncthing@minute 60
+
