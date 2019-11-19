@@ -30,7 +30,7 @@ then
   do
     snapshotDate=`echo $snapshot | awk -F '@' '{ print $2 }' | awk -F '_' '{ print $NF }'`
     let snapshotAge=dateNow-snapshotDate
-    echo "[+] $snapshot|$snapshotAge"
+    echo "> $snapshot|$snapshotAge"
     if (( $snapshotAge > $olderThan ))
     then
         echo "[+] Destroying $snapshot"
