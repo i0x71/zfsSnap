@@ -7,6 +7,12 @@ root@host:~# /tank/scripts/zfsSnap.sh
 
 **olderThan amount in seconds.**
 
+## !!!! Snapshot name must be in the following format ##
+
+**[zpoolPath]@[snapshotName]_[timestampInSecondsSinceEpoch] **
+
+**tank/media@syncthing_test_1574178998 **
+
 ## Examples:
 root@host:~# zfs snapshot tank/media@**media_daily**_`date +%s`
 
