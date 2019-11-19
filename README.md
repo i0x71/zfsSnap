@@ -16,13 +16,16 @@ root@host:~# ./zfsSnap.sh destroy tank/media@minute 60
 
 0 * * * * /tank/scripts/zfsSnap.sh destroy tank/media@hourly 3600
 
+
 @daily /tank/scripts/zfsSnap.sh create tank/media@daily
 
 @daily /tank/scripts/zfsSnap.sh destroy tank/media@daily 86400
 
+
 @weekly /tank/scripts/zfsSnap.sh create tank/media@weekly
 
 @weekly /tank/scripts/zfsSnap.sh destroy tank/media@weekly 604800
+
 
 @monthly /tank/scripts/zfsSnap.sh create tank/media@autoMonthly
 
