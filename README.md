@@ -7,22 +7,22 @@ root@swamp:/swamptank/scripts# ./zfsSnap.sh
 
 
 ## Examples ##
-root@host:~# ./zfsSnap.sh create swamptank/syncthing@minute
+root@host:~# ./zfsSnap.sh create tank/media@minute
 
-root@host:~# ./zfsSnap.sh destroy swamptank/syncthing@minute 60
+root@host:~# ./zfsSnap.sh destroy tank/media@minute 60
 
 ## Crontab examples ##
-0 * * * * /swamptank/scripts/zfsSnap.sh create swamptank/syncthing@hourly
+0 * * * * /tank/scripts/zfsSnap.sh create tank/media@hourly
 
-0 * * * * /swamptank/scripts/zfsSnap.sh destroy swamptank/syncthing@hourly 3600
+0 * * * * /tank/scripts/zfsSnap.sh destroy tank/media@hourly 3600
 
-@daily /swamptank/scripts/zfsSnap.sh create swamptank/syncthing@daily
+@daily /tank/scripts/zfsSnap.sh create tank/media@daily
 
-@daily /swamptank/scripts/zfsSnap.sh destroy swamptank/syncthing@daily 86400
+@daily /tank/scripts/zfsSnap.sh destroy tank/media@daily 86400
 
-@weekly /swamptank/scripts/zfsSnap.sh create swamptank/syncthing@minute
+@weekly /tank/scripts/zfsSnap.sh create tank/media@minute
 
-@weekly /swamptank/scripts/zfsSnap.sh destroy swamptank/syncthing@minute 604800
+@weekly /tank/scripts/zfsSnap.sh destroy tank/media@minute 604800
 
 
 **3600 seconds is 1 hour | 86400 seconds is 24 hours | 604800 seconds is 7 days**
