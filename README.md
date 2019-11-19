@@ -27,6 +27,7 @@ root@host:~# ./zfsSnap.sh destroy tank/media@minute 60
 @monthly /tank/scripts/zfsSnap.sh create tank/media@autoMonthly
 
 ** Keep monthly for 15552000 (6 months) **
+
 @monthly /tank/scripts/zfsSnap.sh destroy tank/media@autoMonthly 15552000     
 
 
