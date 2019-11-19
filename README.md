@@ -12,7 +12,7 @@ root@host:~# zfs snapshot tank/media@**media_daily**_`date +%s`
 
 root@host:~# /tank/scripts/zfsSnap.sh **media_daily 86400**
 
-*86000 seconds is 1 24 hours*
+*86000 seconds is 24 hours*
 
 root@host:~# zfs snapshot swamptank/syncthing@**media_weekly**_`date +%s`
 
