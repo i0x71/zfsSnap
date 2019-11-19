@@ -3,7 +3,7 @@
 #### Script is used for snapshot cleanup, see examples.
 
 root@host:~# /tank/scripts/zfsSnap.sh 
-/tank/scripts/zfsSnap.sh **[time_period] [olderThan]**
+/tank/scripts/zfsSnap.sh **[snapshotName] [olderThan]**
 
 **olderThan amount in seconds.**
 
